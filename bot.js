@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = ".";
-var adminprefix = '.'
+var prefix = "7";
+var adminprefix = '7'
 
 
-const developers = ["479560968666611722"]
+const developers = ["602502681881214996"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -39,4 +39,4 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 });
 
 
-client.login('NDc5NTYwOTY4NjY2NjExNzIy.XTNXxQ.oGxIxErDXU-z_klxNqLBvjPAEX4');//
+client.login('NjAyNTAyNjgxODgxMjE0OTk2.XTR39Q.jTLr_ak0uwT7jJWehSzVWSDYewM');//
