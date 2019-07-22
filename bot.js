@@ -1,42 +1,44 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "7";
-var adminprefix = '7'
+var prefix = ".";
 
+client.on('ready', () => {
+	console.log('Avatar iS Here');
+});
 
-const developers = ["602502681881214996"]
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'sg')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'sw')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'sl')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/Avatar");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setava')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`b 1.0`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : Avatar ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
 
-client.login('NjAyNTAyNjgxODgxMjE0OTk2.XTR39Q.jTLr_ak0uwT7jJWehSzVWSDYewM');//
+
+    const dreamv2 = ["602502681881214996"]
+    client.on('message', message => {
+        var dream = message.content.split(` `).slice(1).join(' ');
+          if (!dreamv2.includes(message.author.id)) return;
+          if(message.content.startsWith(prefix + "sg")){
+            client.user.setActivity(dream);
+            message.channel.send(`✔️ **Done Playing Now __${dream}__**`)
+        }
+          if (message.content.startsWith(prefix + 'sw')) {
+      client.user.setActivity(dream, {type:'WATCHING'});
+          message.channel.send(`✔️  **Done Watching Now __${dream}__ **`)
+      } else
+      if (message.content.startsWith(prefix + 'sl')) {
+      client.user.setActivity(dream , {type:'LISTENING'});
+          message.channel.send(`✔️ **Done Listening Now __${dream}__** `)
+      } else
+      if (message.content.startsWith(prefix + 'st')) {
+    client.user.setGame(dream, "https://www.twitch.tv/avatar");
+         message.channel.send(`✔️ **Done Stream Now  __${dream}__ **`)
+      }
+ 
+    });
+
+
+client.login('NjAyNTAyNjgxODgxMjE0OTk2.XTR39Q.jTLr_ak0uwT7jJWehSzVWSDYewM');
